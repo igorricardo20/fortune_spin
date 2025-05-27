@@ -200,19 +200,91 @@ export const BalanceProvider: React.FC<{ children: React.ReactNode }> = ({ child
           type: 'deposit',
           status: 'completed',
           method: PaymentMethod.CREDIT_CARD,
-          createdAt: new Date(Date.now() - 86400000 * 2).toISOString() // 2 days ago
+          createdAt: new Date(Date.now() - 86400000 * 10).toISOString() // 10 days ago
         },
         {
           id: '2',
           userId: user.id,
+          amount: 200,
+          type: 'bet',
+          status: 'completed',
+          method: PaymentMethod.E_WALLET,
+          createdAt: new Date(Date.now() - 86400000 * 9).toISOString() // 9 days ago
+        },
+        {
+          id: '3',
+          userId: user.id,
+          amount: 300,
+          type: 'win',
+          status: 'completed',
+          method: PaymentMethod.E_WALLET,
+          createdAt: new Date(Date.now() - 86400000 * 8).toISOString() // 8 days ago
+        },
+        {
+          id: '4',
+          userId: user.id,
           amount: 100,
+          type: 'bet',
+          status: 'completed',
+          method: PaymentMethod.E_WALLET,
+          createdAt: new Date(Date.now() - 86400000 * 7).toISOString() // 7 days ago
+        },
+        {
+          id: '5',
+          userId: user.id,
+          amount: 150,
+          type: 'win',
+          status: 'completed',
+          method: PaymentMethod.E_WALLET,
+          createdAt: new Date(Date.now() - 86400000 * 6).toISOString() // 6 days ago
+        },
+        {
+          id: '6',
+          userId: user.id,
+          amount: 50,
+          type: 'withdrawal',
+          status: 'completed',
+          method: PaymentMethod.BANK_TRANSFER,
+          createdAt: new Date(Date.now() - 86400000 * 5).toISOString() // 5 days ago
+        },
+        {
+          id: '7',
+          userId: user.id,
+          amount: 400,
+          type: 'deposit',
+          status: 'completed',
+          method: PaymentMethod.CREDIT_CARD,
+          createdAt: new Date(Date.now() - 86400000 * 4).toISOString() // 4 days ago
+        },
+        {
+          id: '8',
+          userId: user.id,
+          amount: 120,
+          type: 'bet',
+          status: 'completed',
+          method: PaymentMethod.E_WALLET,
+          createdAt: new Date(Date.now() - 86400000 * 3).toISOString() // 3 days ago
+        },
+        {
+          id: '9',
+          userId: user.id,
+          amount: 180,
+          type: 'win',
+          status: 'completed',
+          method: PaymentMethod.E_WALLET,
+          createdAt: new Date(Date.now() - 86400000 * 2).toISOString() // 2 days ago
+        },
+        {
+          id: '10',
+          userId: user.id,
+          amount: 60,
           type: 'bet',
           status: 'completed',
           method: PaymentMethod.E_WALLET,
           createdAt: new Date(Date.now() - 86400000).toISOString() // 1 day ago
         },
         {
-          id: '3',
+          id: '11',
           userId: user.id,
           amount: 250,
           type: 'win',

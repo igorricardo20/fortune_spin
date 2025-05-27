@@ -65,14 +65,6 @@ const Dashboard: React.FC = () => {
       
       <BalanceChart />
       
-      {/* Featured Games Carousel */}
-      {featuredGames.length > 0 && (
-        <div>
-          <h2 className="text-2xl font-bold text-white mb-4">Featured Games</h2>
-          <FeaturedGames games={featuredGames} />
-        </div>
-      )}
-      
       {/* Two Column Layout for Recent Activity */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
@@ -85,6 +77,14 @@ const Dashboard: React.FC = () => {
           <BetHistoryList bets={recentBets} limit={5} />
         </div>
       </div>
+      
+      {/* Featured Games Carousel */}
+      {featuredGames.length > 0 && (
+        <div>
+          <h2 className="text-2xl font-bold text-white mb-4">Featured Games</h2>
+          <FeaturedGames games={featuredGames} />
+        </div>
+      )}
       
       {/* Popular Games */}
       {popularGames.length > 0 && (

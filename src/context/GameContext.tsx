@@ -25,7 +25,7 @@ const mockGames: Game[] = [
     id: '1',
     name: 'Fortune Tiger',
     type: GameType.SPECIAL,
-    thumbnail: 'https://images.pexels.com/photos/2409681/pexels-photo-2409681.jpeg?auto=compress&cs=tinysrgb&w=600',
+    thumbnail: 'https://www.uai.com.br/apostas/static/wp/imagem-fortune-tiger.webp', // Tiger themed
     description: 'The popular Fortune Tiger game with exciting bonus features!',
     minBet: 1,
     maxBet: 100,
@@ -37,7 +37,7 @@ const mockGames: Game[] = [
     id: '2',
     name: 'Golden Slots',
     type: GameType.SLOT,
-    thumbnail: 'https://images.pexels.com/photos/3279690/pexels-photo-3279690.jpeg?auto=compress&cs=tinysrgb&w=600',
+    thumbnail: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=compress&w=600&q=80', // Slot machine
     description: 'Classic slot machine with multiple paylines and free spins.',
     minBet: 0.5,
     maxBet: 50,
@@ -49,7 +49,7 @@ const mockGames: Game[] = [
     id: '3',
     name: 'Royal Blackjack',
     type: GameType.CARD,
-    thumbnail: 'https://images.pexels.com/photos/7129703/pexels-photo-7129703.jpeg?auto=compress&cs=tinysrgb&w=600',
+    thumbnail: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=compress&w=600&q=80', // Blackjack cards
     description: 'Play against the dealer in this classic card game.',
     minBet: 5,
     maxBet: 200,
@@ -61,7 +61,7 @@ const mockGames: Game[] = [
     id: '4',
     name: 'European Roulette',
     type: GameType.TABLE,
-    thumbnail: 'https://images.pexels.com/photos/39866/entrepreneur-startup-start-up-man-39866.jpeg?auto=compress&cs=tinysrgb&w=600',
+    thumbnail: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=compress&w=600&q=80', // Roulette wheel
     description: 'The classic roulette game with European rules.',
     minBet: 1,
     maxBet: 500,
@@ -73,7 +73,7 @@ const mockGames: Game[] = [
     id: '5',
     name: 'Live Dealer Poker',
     type: GameType.LIVE,
-    thumbnail: 'https://images.pexels.com/photos/2253063/pexels-photo-2253063.jpeg?auto=compress&cs=tinysrgb&w=600',
+    thumbnail: 'https://www.egt.com/wp-content/uploads/2023/07/how-do-casinos-make-money-on-poker.jpeg', // Poker table
     description: 'Play poker with live dealers and other players in real-time.',
     minBet: 10,
     maxBet: 1000,
@@ -85,7 +85,7 @@ const mockGames: Game[] = [
     id: '6',
     name: 'Mega Jackpot',
     type: GameType.SLOT,
-    thumbnail: 'https://images.pexels.com/photos/6664240/pexels-photo-6664240.jpeg?auto=compress&cs=tinysrgb&w=600',
+    thumbnail: 'https://static.vecteezy.com/system/resources/previews/036/179/221/non_2x/jackpot-banner-with-falling-gold-coins-and-confetti-casino-or-lottery-advertising-prize-in-gambling-game-vector.jpg', // Jackpot slot
     description: 'Progressive jackpot slot with massive payouts!',
     minBet: 2,
     maxBet: 100,
