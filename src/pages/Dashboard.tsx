@@ -8,6 +8,7 @@ import FeaturedGames from '../components/ui/FeaturedGames';
 import GameGrid from '../components/ui/GameGrid';
 import TransactionList from '../components/ui/TransactionList';
 import BetHistoryList from '../components/ui/BetHistoryList';
+import BalanceChart from '../components/ui/BalanceChart';
 
 const Dashboard: React.FC = () => {
   const { 
@@ -32,7 +33,6 @@ const Dashboard: React.FC = () => {
         <h1 className="text-3xl font-bold text-white">Welcome back, {user?.username || 'Player'}</h1>
         <p className="text-gray-400 mt-2">Here's an overview of your gaming activity</p>
       </div>
-      
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard 
@@ -62,6 +62,8 @@ const Dashboard: React.FC = () => {
           color="amber"
         />
       </div>
+      
+      <BalanceChart />
       
       {/* Featured Games Carousel */}
       {featuredGames.length > 0 && (

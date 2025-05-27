@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, X } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useChat } from '../../context/ChatContext';
 import ChatMessage from './ChatMessage';
 import ChatRoomSelector from './ChatRoomSelector';
@@ -10,10 +10,16 @@ const ChatPanel: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const currentRoom = rooms.find(room => room.id === currentRoomId);
 
-  // Scroll to bottom when messages change
+  // Always scroll to bottom on new messages, but only auto-scroll if user is near the bottom
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages[currentRoomId]]);
+    const container = messagesEndRef.current?.parentElement;
+    if (!container) return;
+    const isNearBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 120;
+    // Always scroll to bottom if a new message arrives
+    if (isNearBottom || messages[currentRoomId]?.length === 1) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages[currentRoomId]?.length]);
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();

@@ -21,8 +21,8 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, toggleChat, isChatOpen }
   };
 
   return (
-    <header className="bg-gray-800 border-b border-gray-700 z-10">
-      <div className="flex items-center justify-between px-4 py-3">
+    <header className="bg-gray-800 border-b border-gray-700 z-10 h-16">
+      <div className="flex items-center justify-between px-4 h-16">
         <div className="flex items-center">
           {isAuthenticated && (
             <button 
@@ -73,7 +73,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, toggleChat, isChatOpen }
               <div className="relative">
                 <div className="flex items-center space-x-2">
                   {user?.balance !== undefined && (
-                    <div className="bg-gray-700 px-3 py-1 rounded-full text-amber-500 font-semibold text-sm">
+                    <div className="bg-gray-700 px-3 py-1 rounded-full text-amber-500 font-semibold text-sm hidden sm:block">
                       ${user.balance.toFixed(2)}
                     </div>
                   )}
@@ -90,6 +90,7 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, toggleChat, isChatOpen }
                           <User className="h-5 w-5 text-gray-300" />
                         )}
                       </div>
+                      {/* Hide username on small screens, only show avatar */}
                       <span className="text-sm font-medium text-gray-300 hidden md:block">
                         {user?.username}
                       </span>
@@ -111,15 +112,22 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar, toggleChat, isChatOpen }
             <div className="flex items-center space-x-3">
               <Link
                 to="/login"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium hidden xs:block"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium"
+                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium hidden xs:block"
               >
                 Sign Up
+              </Link>
+              {/* Show only icons for login/register on extra small screens */}
+              <Link
+                to="/login"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white p-2 rounded-md xs:hidden"
+              >
+                <User className="h-5 w-5" />
               </Link>
             </div>
           )}

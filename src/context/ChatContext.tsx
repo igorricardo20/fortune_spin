@@ -110,8 +110,8 @@ const chatReducer = (state: ChatState, action: ChatAction): ChatState => {
         messages: {
           ...state.messages,
           [action.payload.roomId]: [
-            action.payload,
-            ...(state.messages[action.payload.roomId] || [])
+            ...(state.messages[action.payload.roomId] || []),
+            action.payload
           ]
         },
         isLoading: false,

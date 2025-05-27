@@ -39,14 +39,13 @@ const Wallet: React.FC = () => {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-white mb-6">Wallet</h1>
-      
+      <h1 className="text-3xl font-bold text-white mb-6 text-center">Wallet</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Balance Card */}
-        <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900 rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-6">
             <div className="flex items-center mb-4">
-              <div className="p-3 bg-purple-600 rounded-lg mr-4">
+              <div className="p-3 bg-gradient-to-r from-purple-600 to-amber-500 rounded-lg mr-4 shadow-lg">
                 <WalletIcon className="h-6 w-6 text-white" />
               </div>
               <h2 className="text-xl font-bold text-white">Account Balance</h2>
@@ -167,7 +166,7 @@ const Wallet: React.FC = () => {
                     key={value}
                     type="button"
                     onClick={() => setAmount(value)}
-                    disabled={activeTab === 'withdraw' && user && value > user.balance}
+                    disabled={activeTab === 'withdraw' && !!user && value > user.balance}
                     className={`py-2 px-3 rounded-md text-center transition-colors ${
                       amount === value
                         ? 'bg-purple-600 text-white'
@@ -188,7 +187,7 @@ const Wallet: React.FC = () => {
             
             <button
               type="submit"
-              disabled={isLoading || (activeTab === 'withdraw' && user && amount > user.balance)}
+              disabled={isLoading || (activeTab === 'withdraw' && !!user && amount > (user?.balance ?? 0))}
               className={`w-full py-3 rounded-md font-bold text-center transition-colors ${
                 isLoading
                   ? 'bg-gray-600 text-gray-300 cursor-not-allowed'

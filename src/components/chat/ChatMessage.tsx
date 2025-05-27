@@ -18,8 +18,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
 
   return (
     <div className={`flex ${isCurrentUser ? 'justify-end' : 'justify-start'}`}>
-      <div className={`flex max-w-xs md:max-w-sm ${isCurrentUser ? 'flex-row-reverse' : 'flex-row'}`}>
-        <div className="flex-shrink-0">
+      <div className={`flex max-w-xs md:max-w-sm items-end ${isCurrentUser ? 'flex-row-reverse' : 'flex-row'}`}>
+        <div className="flex-shrink-0 self-end">
           <div className="h-8 w-8 rounded-full overflow-hidden bg-gray-600">
             {message.avatar ? (
               <img src={message.avatar} alt={message.username} className="h-full w-full object-cover" />
@@ -36,11 +36,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
             <span className="font-medium text-xs text-purple-400">{message.username}</span>
             <span className="text-xs text-gray-500">{formatTime(message.timestamp)}</span>
           </div>
-          <div className={`mt-1 text-sm px-3 py-2 rounded-lg ${
-            isCurrentUser 
+          <div className={`mt-1 text-sm px-3 py-2 rounded-lg break-words whitespace-pre-line inline-block align-bottom ${
+            isCurrentUser
               ? 'bg-purple-700 text-white'
               : 'bg-gray-700 text-gray-200'
-          }`}>
+          }`} style={{ wordBreak: 'break-word', maxWidth: '18rem' }}>
             {message.message}
           </div>
         </div>

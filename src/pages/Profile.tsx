@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAuth } from '../context/AuthContext';
 
 const Profile = () => {
@@ -6,19 +5,18 @@ const Profile = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Profile</h1>
-        
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+      <div className="max-w-3xl mx-auto bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-2xl p-8">
+        <h1 className="text-3xl font-bold mb-8 text-white">Profile</h1>
+        <div className="bg-white/5 dark:bg-gray-800 rounded-lg shadow-md p-6">
           <div className="space-y-6">
             {/* Profile Picture Section */}
             <div className="flex items-center space-x-4">
-              <div className="w-24 h-24 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <span className="text-4xl text-gray-500 dark:text-gray-400">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-600 to-amber-500 flex items-center justify-center shadow-lg">
+                <span className="text-4xl text-white font-bold">
                   {user?.email?.[0]?.toUpperCase() || 'U'}
                 </span>
               </div>
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
+              <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-amber-500 text-white rounded-md hover:from-purple-700 hover:to-amber-600 transition-colors font-semibold shadow-md">
                 Update Photo
               </button>
             </div>
